@@ -1,0 +1,12 @@
+{
+  "collection": {
+    "address": "65zHUQxBY7ahUErQGroYkYr3ppVFvYamK79HhiPiW2T1",
+    "name": "FreezableCollection"
+  },
+  "asset": {
+    "address": "4e5c1L2MF5jnCsF9W7ujavB85ZzB5xPqN9MneHjCCU47",
+    "name": "FreezableAsset#1",
+    "frozen": true
+  },
+  "createdAt": "2026-01-16T12:48:41.615Z"
+}

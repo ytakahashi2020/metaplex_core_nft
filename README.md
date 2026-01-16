@@ -146,6 +146,71 @@ Collection Name: YukiTest202601Col
 Collection URI: https://example.com/collection-metadata.json
 ```
 
+### Step 6: Freeze機能付きNFTを作成（オプション）
+
+Freeze機能を持つNFTを作成する場合：
+
+```bash
+npm run create-freezable
+```
+
+このスクリプトは以下を一括で実行します：
+1. Collection作成
+2. Asset作成（Collectionに紐づけ）
+3. FreezeDelegateプラグイン追加
+4. Assetをフリーズ
+
+出力例：
+```
+🚀 Creating Freezable NFT (Collection + Asset + Freeze)...
+🌐 RPC: https://api.devnet.solana.com
+
+==================================================
+📦 Step 1: Creating Collection...
+==================================================
+✅ Collection created!
+📍 Collection Address: xxxx
+
+==================================================
+🎨 Step 2: Creating Asset...
+==================================================
+✅ Asset created!
+📍 Asset Address: xxxx
+
+==================================================
+🔌 Step 2.5: Adding FreezeDelegate plugin...
+==================================================
+✅ FreezeDelegate plugin added!
+
+📊 Asset state BEFORE freeze:
+   - FreezeDelegate frozen: false
+
+==================================================
+🥶 Step 3: Freezing the Asset...
+==================================================
+✅ Asset frozen!
+
+📊 Asset state AFTER freeze:
+   - FreezeDelegate frozen: true
+
+==================================================
+📋 Summary
+==================================================
+📦 Collection: xxxx
+🎨 Asset: xxxx
+🥶 Frozen: true
+
+⚠️  This asset cannot be transferred while frozen!
+   Use thawAsset() to unfreeze and allow transfers.
+```
+
+#### Freeze機能について
+
+- **Freezeとは**: フリーズされたAssetは転送（transfer）ができなくなります
+- **ユースケース**: ステーキング、NFTレンタル、ゲーム内アイテムのロックなど
+- **解凍方法**: `thawAsset()`を使用してフリーズを解除できます
+- **対象**: Assetのみ（Collectionにはfreeze機能はありません）
+
 ## Explorerでの確認
 
 | Explorer | URL | Core NFT対応 |
@@ -161,11 +226,13 @@ Collection URI: https://example.com/collection-metadata.json
 ```
 solana_nft/
 ├── src/
-│   ├── createCollection.ts  # Collection作成スクリプト
-│   ├── createNft.ts         # Asset作成スクリプト
-│   └── fetchAsset.ts        # Asset確認スクリプト
-├── collection.json          # 作成したCollectionのアドレス（自動生成）
-├── nfts.json                # 作成したAssetの一覧（自動生成）
+│   ├── createCollection.ts    # Collection作成スクリプト
+│   ├── createNft.ts           # Asset作成スクリプト
+│   ├── createFreezableNft.ts  # Freeze機能付きNFT作成スクリプト
+│   └── fetchAsset.ts          # Asset確認スクリプト
+├── collection.json            # 作成したCollectionのアドレス（自動生成）
+├── nfts.json                  # 作成したAssetの一覧（自動生成）
+├── freezable-nft.json         # Freeze機能付きNFTの情報（自動生成）
 ├── package.json
 ├── tsconfig.json
 └── README.md
@@ -208,6 +275,7 @@ solana_nft/
 | `npm run create-nft -- <番号>` | 番号を指定してAsset NFTを作成 |
 | `npm run fetch-asset` | 最後に作成したAssetの情報を確認 |
 | `npm run fetch-asset -- <アドレス>` | 指定したAssetの情報を確認 |
+| `npm run create-freezable` | Freeze機能付きNFTを作成（Collection + Asset + Freeze） |
 
 ---
 

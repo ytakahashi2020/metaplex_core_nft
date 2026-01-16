@@ -7,6 +7,7 @@
     "create-collection": "ts-node src/createCollection.ts",
     "create-nft": "ts-node src/createNft.ts",
     "fetch-asset": "ts-node src/fetchAsset.ts",
+    "create-freezable": "ts-node src/createFreezableNft.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
