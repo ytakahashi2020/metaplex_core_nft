@@ -319,6 +319,18 @@ solana balance
 - Metaplex Core Explorer: https://core.metaplex.com/explorer/8dn2Tkzr8ciCCteqhX8dQEar6vLXFQKShBrGFtsCw5y7
 - SolanaFM: https://solana.fm/address/8dn2Tkzr8ciCCteqhX8dQEar6vLXFQKShBrGFtsCw5y7
 
+#### Freeze機能付きNFT作成
+
+```
+📦 Collection: 8oURCCKSQzJEkmSivBqeg3f9HFKp2LcEqL3fJDAp93Yj
+🎨 Asset: 3qtmoQFiDpdrgNQjxNPJ1xdmYfQP53QocSh4eyWoYUGm
+🥶 Frozen: true
+```
+
+- Collection (Metaplex Core Explorer): https://core.metaplex.com/explorer/8oURCCKSQzJEkmSivBqeg3f9HFKp2LcEqL3fJDAp93Yj
+- Asset (Metaplex Core Explorer): https://core.metaplex.com/explorer/3qtmoQFiDpdrgNQjxNPJ1xdmYfQP53QocSh4eyWoYUGm
+- Asset (SolanaFM): https://solana.fm/address/3qtmoQFiDpdrgNQjxNPJ1xdmYfQP53QocSh4eyWoYUGm
+
 ### devnetに戻す場合
 
 ```bash
